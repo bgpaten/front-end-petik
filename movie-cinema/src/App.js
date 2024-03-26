@@ -1,39 +1,15 @@
-import Header from "./component/Header";
-import Car from "./component/Car";
-import User from "./component/User";
-import Footer from "./component/Footer";
-import imgProfil from "./component/about.jpg"
+import Header from "./component/Navbar/Navbar";
+import Car from "./component/Car/Car";
+import Footer from "./component/Footer/Footer";
+import Main from "./component/Main/Main";
+// import imgProfil from "./component/about.jpg"
 
 function App() {
   return (
-    <div className="App">
+    <div className="container">
       <Header />
       <h1>Hello World</h1>
-      <User
-        gambar="https://cdn-icons-png.flaticon.com/512/1077/1077114.png"
-        nama="Asep"
-        alamat="Jaksel"
-        angkatan={11}
-        hobies={["Badminton", "Futsal", "Tenis Meja"]}
-        status={false}
-        profil={(nama) => alert("Profil " + nama + " telah dibuka")}
-      />
-      <User
-        gambar={imgProfil}
-        nama="Samsul"
-        alamat="Jaksel"
-        angkatan={11}
-        hobies={["Badminton", "Futsal", "Tenis Meja"]}
-        status={true}
-        profil={(nama) => alert("Profil " + nama + " telah dibuka")}
-      />
-      <Car
-        merk="Dodge"
-        harga={5}
-        isNew={true}
-        colors={["Hitam", "Putih", "abu-abu"]}
-        beli={() => alert("Sudah dibeli")}
-      />
+      <Main/>
       <Footer nama="BgPaten" />
     </div>
   );
