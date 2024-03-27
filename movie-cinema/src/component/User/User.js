@@ -7,8 +7,9 @@ const User = (props) => {
     // angkatan,
     // hobies,
     // status,
-    profil,
+    message,
     member,
+    id,
     // gambar
   } = props;
 
@@ -46,9 +47,10 @@ const User = (props) => {
           <tr>
             <td colSpan={2}>{member}</td>
           </tr>
+          <tr>{id}</tr>
           <tr>
             <td>
-              <button onClick={() => profil(nama)}>Message</button>
+              <button onClick={message}>Message</button>
             </td>
             <td>
               <button>Subscribe</button>

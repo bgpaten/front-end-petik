@@ -1,5 +1,5 @@
 import Header from "./component/Navbar/Navbar";
-import Car from "./component/Car/Car";
+// import Car from "./component/Car/Car";
 import Footer from "./component/Footer/Footer";
 import Main from "./component/Main/Main";
 // import imgProfil from "./component/about.jpg"
@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <h1>Hello World</h1>
       <Main/>
       <Footer nama="BgPaten" />
     </div>
