@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Movie from "../Movie/Movie";
 import "./Movies.css";
+import AddMovieForm from "../AddMovieForm/AddMovieForm";
 
 const Movies = () => {
-  const datas = [
+
+// useState tergantung jenis datanya, string, array dll
+// const [nama, setNama] = useState("");
+
+  const [datas, setDatas] = useState([
     {
       title: "Judul film 1",
       year: 2004,
@@ -64,7 +69,22 @@ const Movies = () => {
       genre: "Comedy",
       poster: "https://picsum.photos/200/300?random=10",
     },
-  ];
+  ]);
+
+  // const handleClick = () => {
+  //   const movie = {
+  //     title: "Amazing Spiderman",
+  //     year: 2012,
+  //     genre: "Action",
+  //     poster: "https://picsum.photos/200/300"
+  //   };
+  //   setDatas([...datas, movie]);
+  // };
+
+  const addMovie = (movie) => {
+    setDatas([...datas, movie]);
+  };
+
   return (
     <div>
       <h1>Latest Movies</h1>
@@ -79,7 +99,9 @@ const Movies = () => {
             />
           );
         })}
+        {/* <button onClick={handleClick}>Add Movie</button> */}
       </div>
+      <AddMovieForm onAddMovie={addMovie}/>
     </div>
   );
 };

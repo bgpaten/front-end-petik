@@ -2,13 +2,15 @@ import Header from "./component/Navbar/Navbar";
 // import Car from "./component/Car/Car";
 import Footer from "./component/Footer/Footer";
 import Main from "./component/Main/Main";
+// import AddMovieForm from "./component/AddMovieForm/AddMovieForm";
 // import imgProfil from "./component/about.jpg"
+import "./App.css"
 
 function App() {
   return (
     <div className="container">
       <Header />
-      <Main/>
+      <Main />
       <Footer nama="BgPaten" />
     </div>
   );

@@ -1,67 +1,68 @@
-import User from "../User/User.js";
+// import User from "../User/User.js";
 // import Car from "../Car/Car.js";
 import Movies from "../Movies/Movies";
 import Hero from "../Hero/Hero";
 import "./Main.css";
+// import Counter from "../Counter/Counter";
 
 const Main = () => {
-  const users = [
-    {
-      nama: "Samsul",
-      member: "Gold",
-      message: "Santai!",
-    },
-    {
-      nama: "Asep",
-      member: "Platinum",
-      message: "Stay coll",
-    },
-    {
-      nama: "Ajo",
-      member: "Diamond",
-      message: "Tenang aja",
-    },
-    {
-      nama: "Joko",
-      member: "No Member",
-      message: "Asyhadu",
-    },
-    {
-      nama: "Ari",
-      member: "Gold",
-      message: "Banzai!",
-    },
-    {
-      nama: "Ryhn",
-      member: "Platinum",
-      messsage: "Tetap Semangat",
-    },
-    {
-      nama: "Dodo",
-      member: "Gold",
-      message: "Untuk Aktifitas Hari ini",
-    },
-    {
-      nama: "Putra",
-      member: "Diamond",
-      message: "BTC",
-    },
-    {
-      nama: "Daus",
-      member: "Gold",
-      messagee: "Suroboyo cuk",
-    },
-    {
-      nama: "Samsul",
-      member: "Gold",
-      message: "Puertorico"
-    },
-  ];
+  // const users = [
+  //   {
+  //     nama: "Samsul",
+  //     member: "Gold",
+  //     message: "Santai!",
+  //   },
+  //   {
+  //     nama: "Asep",
+  //     member: "Platinum",
+  //     message: "Stay coll",
+  //   },
+  //   {
+  //     nama: "Ajo",
+  //     member: "Diamond",
+  //     message: "Tenang aja",
+  //   },
+  //   {
+  //     nama: "Joko",
+  //     member: "No Member",
+  //     message: "Asyhadu",
+  //   },
+  //   {
+  //     nama: "Ari",
+  //     member: "Gold",
+  //     message: "Banzai!",
+  //   },
+  //   {
+  //     nama: "Ryhn",
+  //     member: "Platinum",
+  //     messsage: "Tetap Semangat",
+  //   },
+  //   {
+  //     nama: "Dodo",
+  //     member: "Gold",
+  //     message: "Untuk Aktifitas Hari ini",
+  //   },
+  //   {
+  //     nama: "Putra",
+  //     member: "Diamond",
+  //     message: "BTC",
+  //   },
+  //   {
+  //     nama: "Daus",
+  //     member: "Gold",
+  //     messagee: "Suroboyo cuk",
+  //   },
+  //   {
+  //     nama: "Samsul",
+  //     member: "Gold",
+  //     message: "Puertorico",
+  //   },
+  // ];
   return (
     <div className="content">
       <Hero />
       <Movies />
-      {users.map((user, index) => {
+      {/* {users.map((user, index) => {
         return (
           <User
             nama={user.nama}
@@ -70,7 +71,8 @@ const Main = () => {
             message={() => alert(user.message)}
           />
         );
-      })}
+      })} */}
+      {/* <Counter /> */}
       {/* <User nama="Asep" member="Gold" />
       <User nama="Samsul" member="Platinum" />
       <User nama="Ucup" member="Silver" />
