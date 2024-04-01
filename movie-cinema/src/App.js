@@ -4,14 +4,30 @@ import Footer from "./component/Footer/Footer";
 import Main from "./component/Main/Main";
 // import AddMovieForm from "./component/AddMovieForm/AddMovieForm";
 // import imgProfil from "./component/about.jpg"
-import "./App.css"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import "./App.css";
+import Navbar from "./component/Navbar/Navbar";
+import Popular from "./pages/movie/Popular";
+import TopRated from "./pages/movie/TopRated";
+import Detail from "./pages/movie/Detail";
 
 function App() {
   return (
     <div className="container">
-      <Header />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/popular" element={<Popular />} />
+          <Route path="/top" element={<TopRated />} />
+          <Route path="/detail/:id" element={<Detail />} />
+        </Routes>
+        <Footer nama="BgPaten"/>
+      </BrowserRouter>
+      {/* <Header />
       <Main />
-      <Footer nama="BgPaten" />
+      <Footer nama="BgPaten" /> */}
     </div>
   );
 }

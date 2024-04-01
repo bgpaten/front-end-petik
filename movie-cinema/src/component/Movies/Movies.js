@@ -1,75 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Movie from "../Movie/Movie";
 import "./Movies.css";
 import AddMovieForm from "../AddMovieForm/AddMovieForm";
+import { getMovieList } from "../../api.js";
 
 const Movies = () => {
+  // useState tergantung jenis datanya, string, array dll
+  // const [nama, setNama] = useState("");
 
-// useState tergantung jenis datanya, string, array dll
-// const [nama, setNama] = useState("");
-
-  const [datas, setDatas] = useState([
-    {
-      title: "Judul film 1",
-      year: 2004,
-      genre: "Comedy",
-      poster: "https://picsum.photos/200/300?random=1",
-    },
-    {
-      title: "Judul film 2",
-      year: 2004,
-      genre: "Romance",
-      poster: "https://picsum.photos/200/300?random=2",
-    },
-    {
-      title: "Judul film 3",
-      year: 2004,
-      genre: "Action",
-      poster: "https://picsum.photos/200/300?random=3",
-    },
-    {
-      title: "Judul film 4",
-      year: 2004,
-      genre: "Fanntasy",
-      poster: "https://picsum.photos/200/300?random=4",
-    },
-    {
-      title: "Judul film 5",
-      year: 2004,
-      genre: "Anime",
-      poster: "https://picsum.photos/200/300?random=5",
-    },
-    {
-      title: "Judul film 6",
-      year: 2004,
-      genre: "Animasi",
-      poster: "https://picsum.photos/200/300?random=6",
-    },
-    {
-      title: "Judul film 7",
-      year: 2004,
-      genre: "Sci-FI",
-      poster: "https://picsum.photos/200/300?random=7",
-    },
-    {
-      title: "Judul film 8",
-      year: 2004,
-      genre: "Horror",
-      poster: "https://picsum.photos/200/300?random=8",
-    },
-    {
-      title: "Judul film 9",
-      year: 2004,
-      genre: "Gore",
-      poster: "https://picsum.photos/200/300?random=9",
-    },
-    {
-      title: "Judul film 10",
-      year: 2004,
-      genre: "Comedy",
-      poster: "https://picsum.photos/200/300?random=10",
-    },
-  ]);
+  const [datas, setDatas] = useState([]);
 
   // const handleClick = () => {
   //   const movie = {
@@ -85,6 +24,13 @@ const Movies = () => {
     setDatas([...datas, movie]);
   };
 
+  useEffect(() => {
+    // menagkap data result api
+    getMovieList().then((result) => {
+      setDatas(result);
+    });
+  }, []);
+
   return (
     <div>
       <h1>Latest Movies</h1>
@@ -92,16 +38,16 @@ const Movies = () => {
         {datas.map((data, index) => {
           return (
             <Movie
+              id={data.id}
               title={data.title}
-              year={data.year}
-              genre={data.genre}
-              poster={data.poster}
+              year={data.release_date}
+              poster={data.poster_path}
             />
           );
         })}
         {/* <button onClick={handleClick}>Add Movie</button> */}
       </div>
-      <AddMovieForm onAddMovie={addMovie}/>
+      <AddMovieForm onAddMovie={addMovie} />
     </div>
   );
 };
