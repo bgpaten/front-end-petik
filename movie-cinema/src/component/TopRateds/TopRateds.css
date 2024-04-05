@@ -1,0 +1,18 @@
+.top-rated-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+/* Medium Screen */
+@media (max-width: 768px) {
+    .top-rated-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+   .top-rated-container {
+    grid-template-columns: 1fr;
+   } 
+}

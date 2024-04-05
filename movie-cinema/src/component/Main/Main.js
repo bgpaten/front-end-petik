@@ -61,6 +61,7 @@ const Main = () => {
   return (
     <div className="content">
       <Hero />
+      <h1>Latest Movies</h1>
       <Movies />
       {/* {users.map((user, index) => {
         return (

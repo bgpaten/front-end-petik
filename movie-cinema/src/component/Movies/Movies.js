@@ -33,7 +33,6 @@ const Movies = () => {
 
   return (
     <div>
-      <h1>Latest Movies</h1>
       <div className="movies-container">
         {datas.map((data, index) => {
           return (

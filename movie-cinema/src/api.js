@@ -13,14 +13,40 @@ export const getMovieList = async () => {
     console.error('Error fetching movie list:', error);
     throw error;
   }
+};  
+
+export const getDetailMovie = async (id) => {
+    const movie = await axios.get (
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${apikey}`
+    );
+    return movie.data;
 };
 
-export const getDetailMovie = async () => {
-    const movie = await axios.get (
-        `https://api.themoviedb.org/3/movie/?${apikey}`
+export const getPopularMovie = async () => {
+  try {
+    const movie = await axios.get(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`
     );
+
     return movie.data.results;
+  } catch (error) {
+    console.error('Error fetching movie list:', error);
+    throw error;
+  }
 };
+
+export const getTopRatedMovie = async () => {
+  try {
+    const movie = await axios.get(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=${apikey}`
+    );
+
+    return movie.data.results;
+  } catch (error) {
+    console.error('Error fetching movie list:', error);
+    throw error;
+  }
+};  
 
 // popular sama dengan home
 
