@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavbarText,
-} from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from "reactstrap";
 
 function NavbarComponent(args) {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,11 +14,31 @@ function NavbarComponent(args) {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>
-              <NavLink style={{textDecoration: "none"}} to={'/home'} className="text-light m-3">Home</NavLink>
-              <NavLink style={{textDecoration: "none"}} to={'/login'} className="text-light m-3">login</NavLink>
-              <NavLink style={{textDecoration: "none"}} to={'/top'} className="text-light m-3">Top Rated</NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to={"/"}
+              className="text-light mr-3"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to={"/login"}
+              className="text-light mr-3"
+            >
+              login
+            </NavLink>
+            <NavLink
+              style={{ textDecoration: "none" }}
+              to={"/courses"}
+              className="text-light mr-3"
+            >
+              Courses
+            </NavLink>
           </Nav>
-          <NavbarText>BgPaten</NavbarText>
+          <NavLink to={'/login'}>
+            <button className="button is-lightsss">Login</button>
+          </NavLink>
         </Collapse>
       </Navbar>
     </div>
