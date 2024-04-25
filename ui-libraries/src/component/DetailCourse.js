@@ -8,10 +8,10 @@ function DetailCourse() {
   const [course, setCourse] = useState([]);
 
   useEffect(() => {
-    getCourse();
+    getCourseById();
   });
 
-  const getCourse = async () => {
+  const getCourseById = async () => {
     const response = await axios.get(`https://api.sukmax.my.id/course/${id}`);
     setCourse(response.data);
   };

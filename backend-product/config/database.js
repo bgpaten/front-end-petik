@@ -1,4 +1,4 @@
-const Sequelize = require("sequelize");
+const { Sequelize } = require("sequelize");
 
 const db = new Sequelize("auth_db", "ahyar", "bismillah1", {
   host: "localhost",

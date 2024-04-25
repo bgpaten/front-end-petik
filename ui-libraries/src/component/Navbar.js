@@ -1,11 +1,22 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav } from "reactstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { LogOut, reset } from "./features/authSlice";
 
 function NavbarComponent(args) {
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.auth);
+  const navigate = useNavigate();
 
   const toggle = () => setIsOpen(!isOpen);
+
+  const logout = () => {
+    dispatch(LogOut());
+    dispatch(reset());
+    navigate("/login");
+  };
 
   return (
     <div>
@@ -23,10 +34,10 @@ function NavbarComponent(args) {
             </NavLink>
             <NavLink
               style={{ textDecoration: "none" }}
-              to={"/login"}
+              to={"/dashboard"}
               className="text-light mr-3"
             >
-              login
+              dashboard
             </NavLink>
             <NavLink
               style={{ textDecoration: "none" }}
@@ -36,9 +47,15 @@ function NavbarComponent(args) {
               Courses
             </NavLink>
           </Nav>
-          <NavLink to={'/login'}>
-            <button className="button is-lightsss">Login</button>
-          </NavLink>
+          {user ? (
+            <button onClick={logout} className="button is-light">
+              Logout
+            </button>
+          ) : (
+            <NavLink to={"/login"}>
+              <button className="button is-lightsss">Login</button>
+            </NavLink>
+          )}
         </Collapse>
       </Navbar>
     </div>
